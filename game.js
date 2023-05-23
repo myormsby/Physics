@@ -36,6 +36,7 @@ class Level1 extends Phaser.Scene {
         ground.displayWidth=this.sys.game.config.width * 1.1;
 
         let obstacle = this.physics.add.sprite(40, 40, 'block');
+        //test 
         this.physics.add.collider(this.ball,ground);
         this.physics.add.collider(this.ball, obstacle);
         ground.setImmovable();
