@@ -20,7 +20,6 @@ class Level1 extends Phaser.Scene {
     preload() {
         this.load.image('square', 'assets/images/square.png')
         this.load.image('block', 'assets/images/block.png')
-        this.load.image('obstacle', 'assets/images/')
     }
 
 
@@ -36,7 +35,9 @@ class Level1 extends Phaser.Scene {
         let ground = this.physics.add.sprite(groundX, groundY, 'block');
         ground.displayWidth=this.sys.game.config.width * 1.1;
 
+        let obstacle = this.physics.add.sprite(40, 40, 'block');
         this.physics.add.collider(this.ball,ground);
+        this.physics.add.collider(this.ball, obstacle);
         ground.setImmovable();
 
         this.cursors = this.input.keyboard.createCursorKeys();
